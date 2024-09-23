@@ -9,3 +9,9 @@ jobs:
     steps:
     - name: Hola Mundo 007
       run: echo "Hola Mundo...007 desde España"
+  other:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: LS
+      run: ls -al
