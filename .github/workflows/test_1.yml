@@ -9,3 +9,20 @@ jobs:
     steps:
     - name: Hola Mundo 007
       run: echo "Hola Mundo...007 desde España "
+
+    - name: touch file
+      run: touch hola.txt
+
+    - name: Set text
+      run: echo "Hola Mundo desde España" >> hola.txt
+    
+    - name: Read file
+      run: cat hola.txt
+
+    
+  other:
+    runs-on: ubuntu-latest
+    needs: [hola]
+    steps:
+    - name: LS
+      run: ls -al
