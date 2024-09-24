@@ -1,12 +1,19 @@
 name: Hola Mundo 007
 
-on: [push]
+on: 
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
 
 jobs:
   hola:
     runs-on: ubuntu-latest
 
-    steps:
+    steps:  
     - name: Hola Mundo 007
       run: echo "Hola Mundo...007 desde España "
 
@@ -24,5 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [hola]
     steps:
+    - name: Checkout
+      uses: actions/checkout@v4.1.7
     - name: LS
       run: ls -al
